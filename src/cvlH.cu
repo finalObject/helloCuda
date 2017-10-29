@@ -15,8 +15,11 @@ Mat cudaCvl(Mat img,Mat core){
 	int lenY = img.rows; 
 	int lenCore = core.cols;
 	int lenBlock = 16;
-	int lenGridX = lenX/16+1;
-	int lenGridY = lenY/16+1;
+	int lenGridX = lenX/lenBlock;
+	int lenGridY = lenY/lenBlock;
+	if(lenBlock*lenGridX!=lenX)lenGridX++;
+	if(lenBlock*lenGridY!=lenX)lenGridY++;
+
 	int sizeOfImage = lenX*lenY*sizeof(char);
 	int sizeOfCore = lenCore*lenCore*sizeof(char);
 
@@ -38,7 +41,7 @@ Mat cudaCvl(Mat img,Mat core){
 	cudaMalloc((void**)&coreD,sizeOfCore);
 	cudaMemcpy(imgRD,imgRH,sizeOfImage,cudaMemcpyHostToDevice);
 	cudaMemcpy(imgGD,imgGH,sizeOfImage,cudaMemcpyHostToDevice);
-	cudaMemcpy(imgBD,imgBD,sizeOfImage,cudaMemcpyHostToDevice);
+	cudaMemcpy(imgBD,imgBH,sizeOfImage,cudaMemcpyHostToDevice);
 	cudaMemcpy(coreD,coreH,sizeOfCore,cudaMemcpyHostToDevice);
 	char *outRD=NULL,*outGD=NULL,*outBD=NULL;
 	cudaMalloc((void**)&outRD,sizeOfImage);

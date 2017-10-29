@@ -18,6 +18,10 @@ int main(){
 	Mat image2 = cpuCvl(image,core);
 	imshow("CPU",image2);
 
+	Mat image3;
+	image3 = cudaCvl(image,core);
+	imshow("CUDA",image3);	
+
 	waitKey(0);
 	return 0;
 }
