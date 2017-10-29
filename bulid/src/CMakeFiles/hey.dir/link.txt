@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/hey.dir/./hey_generated_hey.cu.o  -o ../../bin/hey  -L/usr/local/cuda-6.5/lib  -L/home/ubuntu/Workspace/SW/lib -rdynamic /usr/local/cuda-6.5/lib/libcudart.so -Wl,-rpath,/usr/local/cuda-6.5/lib:/home/ubuntu/Workspace/SW/lib 

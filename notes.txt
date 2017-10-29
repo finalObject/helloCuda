@@ -1,0 +1,32 @@
+this is my note!
+
+Grid contain Block:1 or 2 dimension
+Block contain Thread:1,2 or 3 dimension
+
+blockIdx.x blockId.y/gridDim.x gridDim.y  
+threadIdx.x threadIdx.y threadIdx.z/blockDim.x blockDim.y
+
+cudaMalloc(void* p,int size);//p can only be used on the device
+cudaFree(void* p);
+
+//exchange data between host and device
+cudaMemcpy(deviceP,hostP,size,cudaMemcpyHostToDevice);
+cudaMemcpy(hostP,deviceP,size,cudaMemcpyDeviceToHost);
+
+//define the size of grid and block
+dim3 dimBlock(X,Y);
+dim3 dimGrid(1,1);
+kernelFun<<<dimGrid,dimBlock>>>(md,nd,pd);
+
+__global__ void kernelFunc();//call in host,and run in device
+__device__ [] deviceFunc();//call in device,and run in host
+__host__ [] hostFunc();call in host,and run in host 
+
+int2 i2 = make_int2(1,2);//like an array
+i2.x;i2.y;i2.z;i2.w; 
+
+sqrt;rsqrt;exp,log;sin,cos,tan,sincos;asin,acos,atan2;trunc,ceil,floor
+__sqrt,__sin  ...//faster
+
+__syncthreads();//syncthreads in block
+

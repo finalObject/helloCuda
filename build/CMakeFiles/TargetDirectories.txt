@@ -1,0 +1,3 @@
+/home/ubuntu/Workspace/SW/build/src/CMakeFiles/cvl.dir
+/home/ubuntu/Workspace/SW/build/src/CMakeFiles/hey.dir
+/home/ubuntu/Workspace/SW/build/src/CMakeFiles/image.dir
