@@ -10,17 +10,18 @@ char getValue(Mat img,int x,int y,int z,Mat core);
 int main(){
 	Mat image;
 	image = imread("../res/lena.jpg",1);
-	imshow("Display Image",image);
-
+	Mat image1;
+	resize(image,image1,Size(32,32),0,0,CV_INTER_LINEAR);
+//	imshow("Display Image",image);
 	int lenCore = 5;
 	Mat core =(Mat_<char>(lenCore,lenCore)<<1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1);
 
-	Mat image2 = cpuCvl(image,core);
-	imshow("CPU",image2);
+	Mat image2 = cpuCvl(image1,core);
+//	imshow("CPU",image2);
 
 	Mat image3;
-	image3 = cudaCvl(image,core);
-	imshow("CUDA",image3);	
+	image3 = cudaCvl(image1,core);
+//	imshow("CUDA",image3);	
 
 	waitKey(0);
 	return 0;

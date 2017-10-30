@@ -14,7 +14,7 @@ Mat cudaCvl(Mat img,Mat core){
 	int lenX = img.cols;
 	int lenY = img.rows; 
 	int lenCore = core.cols;
-	int lenBlock = 16;
+	int lenBlock =10;
 	int lenGridX = lenX/lenBlock;
 	int lenGridY = lenY/lenBlock;
 	if(lenBlock*lenGridX!=lenX)lenGridX++;
@@ -33,6 +33,7 @@ Mat cudaCvl(Mat img,Mat core){
 	mat2pointerImg(img,2,imgRH);
 	mat2pointerCore(core,coreH);
 
+	printf("%d,%d\n",img.at<Vec3b>(0,0)[0],img.at<Vec3b>(0,0)[1]);
 	//device data define
 	char *imgRD=NULL,*imgGD=NULL,*imgBD=NULL,*coreD=NULL;
 	cudaMalloc((void**)&imgRD,sizeOfImage);
@@ -89,7 +90,7 @@ void mat2pointerCore(Mat core,char* coreH){
 	int lenCore = core.rows;
 	int i,j;
 	for(i=0;i<lenCore;i++){
-		for(j=0;j>lenCore;j++){
+		for(j=0;j<lenCore;j++){
 			coreH[i*lenCore+j]=core.at<char>(i,j);
 		}		
 	}
