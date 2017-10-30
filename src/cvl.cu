@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 #include <stdlib.h>
+#include <time.h>
 #include "cvlH.cu"
 using namespace std;
 using namespace cv;
@@ -8,20 +9,27 @@ Mat cudaCvl(Mat img,Mat core);
 Mat cpuCvl(Mat img,Mat core);
 char getValue(Mat img,int x,int y,int z,Mat core);
 int main(){
+	double start,finish;
 	Mat image;
 	image = imread("../res/lena.jpg",1);
 	Mat image1;
-	resize(image,image1,Size(32,32),0,0,CV_INTER_LINEAR);
-//	imshow("Display Image",image);
+//	resize(image,image1,Size(128,128),0,0,CV_INTER_LINEAR);
+
+	imshow("Display Image",image);
 	int lenCore = 5;
 	Mat core =(Mat_<char>(lenCore,lenCore)<<1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1);
 
-	Mat image2 = cpuCvl(image1,core);
-//	imshow("CPU",image2);
+	start = clock();
+	Mat image2 = cpuCvl(image,core);
+	finish = clock();
+	imshow("CPU",image2);
+	printf("CPU function costs %d ms\n",(int)((finish-start)/CLOCKS_PER_SEC*1000));
 
-	Mat image3;
-	image3 = cudaCvl(image1,core);
-//	imshow("CUDA",image3);	
+	start = clock();
+	Mat image3 = cudaCvl(image,core);
+	finish = clock();
+	imshow("CUDA",image3);	
+	printf("GPU function costs %d ms\n",(int)((finish-start)/CLOCKS_PER_SEC*1000));
 
 	waitKey(0);
 	return 0;

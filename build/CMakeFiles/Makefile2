@@ -61,13 +61,11 @@ CMAKE_BINARY_DIR = /home/ubuntu/Workspace/SW/build
 # Convenience name for "all" pass in the directory.
 src/all: src/CMakeFiles/cvl.dir/all
 src/all: src/CMakeFiles/hey.dir/all
-src/all: src/CMakeFiles/image.dir/all
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
 src/clean: src/CMakeFiles/cvl.dir/clean
 src/clean: src/CMakeFiles/hey.dir/clean
-src/clean: src/CMakeFiles/image.dir/clean
 .PHONY : src/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -142,41 +140,6 @@ src/CMakeFiles/hey.dir/clean:
 
 # clean rule for target.
 clean: src/CMakeFiles/hey.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/image.dir
-
-# All Build rule for target.
-src/CMakeFiles/image.dir/all:
-	$(MAKE) -f src/CMakeFiles/image.dir/build.make src/CMakeFiles/image.dir/depend
-	$(MAKE) -f src/CMakeFiles/image.dir/build.make src/CMakeFiles/image.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubuntu/Workspace/SW/build/CMakeFiles  3
-	@echo "Built target image"
-.PHONY : src/CMakeFiles/image.dir/all
-
-# Include target in all.
-all: src/CMakeFiles/image.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/image.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/SW/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/image.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/SW/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/image.dir/rule
-
-# Convenience name for target.
-image: src/CMakeFiles/image.dir/rule
-.PHONY : image
-
-# clean rule for target.
-src/CMakeFiles/image.dir/clean:
-	$(MAKE) -f src/CMakeFiles/image.dir/build.make src/CMakeFiles/image.dir/clean
-.PHONY : src/CMakeFiles/image.dir/clean
-
-# clean rule for target.
-clean: src/CMakeFiles/image.dir/clean
 .PHONY : clean
 
 #=============================================================================

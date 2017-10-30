@@ -127,19 +127,6 @@ hey/fast:
 	$(MAKE) -f src/CMakeFiles/hey.dir/build.make src/CMakeFiles/hey.dir/build
 .PHONY : hey/fast
 
-#=============================================================================
-# Target rules for targets named image
-
-# Build rule for target.
-image: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 image
-.PHONY : image
-
-# fast build rule for target.
-image/fast:
-	$(MAKE) -f src/CMakeFiles/image.dir/build.make src/CMakeFiles/image.dir/build
-.PHONY : image/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -150,7 +137,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... cvl"
 	@echo "... hey"
-	@echo "... image"
 .PHONY : help
 
 

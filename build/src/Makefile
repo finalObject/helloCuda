@@ -129,20 +129,6 @@ hey/fast:
 	cd /home/ubuntu/Workspace/SW/build && $(MAKE) -f src/CMakeFiles/hey.dir/build.make src/CMakeFiles/hey.dir/build
 .PHONY : hey/fast
 
-# Convenience name for target.
-src/CMakeFiles/image.dir/rule:
-	cd /home/ubuntu/Workspace/SW/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/image.dir/rule
-.PHONY : src/CMakeFiles/image.dir/rule
-
-# Convenience name for target.
-image: src/CMakeFiles/image.dir/rule
-.PHONY : image
-
-# fast build rule for target.
-image/fast:
-	cd /home/ubuntu/Workspace/SW/build && $(MAKE) -f src/CMakeFiles/image.dir/build.make src/CMakeFiles/image.dir/build
-.PHONY : image/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -152,7 +138,6 @@ help:
 	@echo "... cvl"
 	@echo "... edit_cache"
 	@echo "... hey"
-	@echo "... image"
 	@echo "... rebuild_cache"
 .PHONY : help
 

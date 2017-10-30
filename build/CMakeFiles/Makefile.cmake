@@ -13,7 +13,6 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/2.8.12.2/CMakeSystem.cmake"
   "src/CMakeFiles/cvl.dir/cvl_generated_cvl.cu.o.depend"
   "src/CMakeFiles/hey.dir/hey_generated_hey.cu.o.depend"
-  "src/CMakeFiles/image.dir/image_generated_dispImage.cu.o.depend"
   "../src/CMakeLists.txt"
   "/usr/share/OpenCV/OpenCVConfig-version.cmake"
   "/usr/share/OpenCV/OpenCVConfig.cmake"
@@ -55,5 +54,4 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 SET(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/cvl.dir/DependInfo.cmake"
   "src/CMakeFiles/hey.dir/DependInfo.cmake"
-  "src/CMakeFiles/image.dir/DependInfo.cmake"
   )
